@@ -1,0 +1,17 @@
+{
+  "img_path": "/YOUR/PATH/TO/TEST/DATASET",
+  "watermark_path": "/FractalForensics/data_process/watermark_cache",
+  "img_size": 512,
+  "wtm_size": 16,
+  "latent_channels": 128,
+  "img_blocks": 6,
+  "wtm_blocks": 5,
+  "rec_blocks": 5,
+  "dec_blocks": 4,
+  "manipulation_layers": [
+    "Combined([Identity(), Jpeg(50), JpegMask(50)])"
+  ],
+  "batch_size": 128,
+  "weight_path": "/FractalForensics/weights/512",
+  "log_path": "/FractalForensics/results"
+}
