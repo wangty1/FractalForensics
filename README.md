@@ -1,6 +1,6 @@
 # 📖 FractalForensics: Proactive Deepfake Detection and Localization via Fractal Watermarks
 
-Source code implementation of our paper [[arXiv](https://arxiv.org/abs/2504.09451)] accepted to Proceedings of the 33rd ACM International Conference on Multimedia (MM 2025).
+Source code implementation of our paper [[arXiv](https://arxiv.org/abs/2504.09451)] accepted to Proceedings of the 33rd ACM International Conference on Multimedia (MM 2025 Oral).
 
 ## 📢 Updates
 
@@ -34,16 +34,18 @@ FractalForensics
     └── dataset_lfw/
         └── test/
             ├── AJ_Cook_0001.jpg
-            └──...
+            └── ...
 ```
 
-In this project, we prepared fractal watermarks with sufficient randomness for efficient loading and running. We provide the watermarks that we used for testing, which can be found in ```watermark_data\```. The watermarks are stored in a single ```.npy``` file. 
+In this project, we prepared fractal watermarks with sufficient randomness for efficient loading and running. We provide the watermarks that we used for testing, which can be found in ```watermark_data/```. The watermarks are stored in a single ```.npy``` file. 
 
-## Test the Model
+## 🔮 Test the Model
 
 The model is tested following the configuration files located in ```configuration/```.
 
 We use ```configuration/test_common.json``` to test the watermarks against all benign manipulations and derive the watermark recovery accuracies. We use ```configuration/test_deepfake.json``` to test the watermarks against Deepfake manipulations and derive the watermark recovery accuracies. 
+
+We provide watermarks randomly generated following the variations in advance, under ```FractalForensics/data_process/watermark_cache```, for direct loading when testing the model. 
 
 We use ```main.py``` to test the model against potential adversaries. 
 
@@ -61,10 +63,10 @@ The source code can be found at the following links:
 * [StyleMask (FG 2023)](https://github.com/StelaBou/StyleMask)
 * [HyperReenact (ICCV 2023)](https://github.com/StelaBou/HyperReenact)
 
-## License
+## ⚖️ License
 This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
 
-## Citation
+## 📝 Citation
 If you find our work useful, please properly cite the following:
 ```
 @inproceedings{Wang2025FractalForensics,
