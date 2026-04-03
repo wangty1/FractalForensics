@@ -16,25 +16,28 @@ FractalForensics is trained using CelebA-HQ and tested on CelebA-HQ and LFW. We 
 * [Download CelebA-HQ](https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html)
 * [Download LFW](https://vis-www.cs.umass.edu/lfw/)
 
-After splitting the image data following the official document of CelebA-HQ, the folder should be named as ```dataset_celeba_hq/``` and placed under ```image_data/```. For the cross-dataset evaluation under a balanced ratio, LFW is processed such that one for each identity is adopted. The directory should look like the following:
+After splitting the image data following the official document of CelebA-HQ, the folder should be named as ```dataset_celeba_hq/``` and placed under ```FractalForensics/data_process/image_data/```. For the cross-dataset evaluation under a balanced ratio, LFW is processed such that one for each identity is adopted. The directory structure should look like the following.
 ```
-FractalForensics
-└── image_data/
-    ├── dataset_celeba_hq/
-    │   ├── train/
-    │   │   ├── 0.jpg
-    │   │   ├── 1.jpg
-    │   │   └── ...
-    │   ├── val/
-    │   │   ├── 1000.jpg
-    │   │   └── ...         
-    │   └── test/
-    │       ├── 10008.jpg
-    │       └── ...    
-    └── dataset_lfw/
-        └── test/
-            ├── AJ_Cook_0001.jpg
-            └── ...
+FractalForensics/
+└── data_process
+    ├── image_data/
+    │   ├── dataset_celeba_hq/
+    │   │   ├── train/
+    │   │   │   ├── 0.jpg
+    │   │   │   ├── 1.jpg
+    │   │   │   └── ...
+    │   │   ├── val/
+    │   │   │   ├── 1000.jpg
+    │   │   │   └── ...         
+    │   │   └── test/
+    │   │       ├── 10008.jpg
+    │   │       └── ...    
+    │   └── dataset_lfw/
+    │       └── test/
+    │           ├── AJ_Cook_0001.jpg
+    │           └── ...
+    └── watermark_data/
+    ...
 ```
 
 In this project, we prepared fractal watermarks with sufficient randomness for efficient loading and running. We provide the watermarks that we used for testing, which can be found in ```watermark_data/```. The watermarks are stored in a single ```.npy``` file. 
@@ -45,9 +48,9 @@ The model is tested following the configuration files located in ```configuratio
 
 We use ```configuration/test_common.json``` to test the watermarks against all benign manipulations and derive the watermark recovery accuracies. We use ```configuration/test_deepfake.json``` to test the watermarks against Deepfake manipulations and derive the watermark recovery accuracies. 
 
-We provide watermarks randomly generated following the variations in advance, under ```FractalForensics/data_process/watermark_cache```, for direct loading when testing the model. 
+We provide watermarks randomly generated following the variations in advance, under ```./data_process/watermark_cache/```, for direct loading when testing the model. 
 
-We use ```main.py``` to test the model against potential adversaries. 
+We use ```test.py``` to test the model against potential adversaries. 
 
 ## 🎭 Deepfake Models Used
 
