@@ -6,9 +6,9 @@ Source code implementation of our paper [[arXiv](https://arxiv.org/abs/2504.0945
 
 - [x] Open project page.
 - [x] Update project page information.
-- [x] Update arXiv version.
-- [ ] Release inference code.
-- [ ] Release trained weights.
+- [x] Update [arXiv](https://arxiv.org/abs/2504.09451) version.
+- [x] Release inference code.
+- [x] Release trained weights.
 
 ## 🗂️ Datasets Used
 FractalForensics is trained using CelebA-HQ and tested on CelebA-HQ and LFW. We do not own the datasets, and they can be downloaded from the official webpages.

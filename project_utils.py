@@ -84,7 +84,7 @@ class ImageDataset(Dataset):
         img_fname = os.path.join(self.img_path, self.img_files[idx])
         img = Image.open(img_fname).convert('RGB')
         img = self.transform(img)
-        return img
+        return img, self.img_files[idx]
 
 
 class WatermarkDataset(Dataset):
@@ -114,6 +114,10 @@ def make_loader(configs, mode='train', use_random=True):
         wtm_dataset = WatermarkDataset(watermark_path)
         wtm_loader = DataLoader(wtm_dataset, batch_size=configs.batch_size, shuffle=True, num_workers=8, drop_last=True)
         return img_loader, wtm_loader
+
+
+def norm(tensor):
+    return (tensor - 0.5) / 0.5
 
 
 def denorm(tensor):
